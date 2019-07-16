@@ -19,6 +19,26 @@ let myDevice = IOSDeviceType.iPhone.rawValue
 
 b) Adjust your code above so that `iPhone` and `iPad` have associated values of type String which represents the model number, eg: `iPhone("6 Plus")`. Use a switch case and let syntax to print out the model number of each device.
 
+```swift
+enum IOSDeviceType {
+    case iPhone(String)
+    case iPad(String)
+    case iWatch(String)
+}
+
+var myDevice = IOSDeviceType.iPhone("6 plus")
+
+switch myDevice {
+    case .iPhone(let model):
+        print("iPhone \(model)")
+    case .iPad(let model):
+        print("iPad \(model)")
+    case .iWatch(let model ):
+        print("iWatch \(model)")
+}
+myDevice
+//prints iPhone 6 plus
+```
 
 ## Question 2
 
