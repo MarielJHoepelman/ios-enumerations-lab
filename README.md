@@ -46,6 +46,34 @@ a) Write an enum called `Shape` and give it cases for `triangle`, `rectangle`, `
 
 b) Write a method inside `Shape` that returns how many sides the shape has. Create a variable called `myFavoritePolygon` and assign it to one of the shapes above, then print out how many sides it has.
 
+```swift
+//solution for part a and b
+
+enum Shapes {
+    case triangle(Int)
+    case rectangle(Int)
+    case square(Int)
+    case pentagon(Int)
+    case hexagon(Int)
+}
+
+var myFavoritePolygon = Shapes.hexagon(6)
+
+switch myFavoritePolygon {
+    case .triangle(let sides):
+        print("A triangle has \(sides) sides.")
+    case .rectangle(let sides):
+        print("A rectangle has \(sides) sides.")
+    case .pentagon(let sides):
+        print("A pentagon \(sides) sides.")
+    case .square(let sides):
+        print("A square \(sides) sides.")
+    case .hexagon(let sides):
+        print("A hexagon has \(sides) sides.")
+}
+myFavoritePolygon
+```
+
 c) Re-write `Shape` so that each case has an associated value of type Int that will represent the length of the sides (assume the shapes are regular polygons so all the sides are the same length) and write a method inside that returns the perimeter of the shape.
 
 
