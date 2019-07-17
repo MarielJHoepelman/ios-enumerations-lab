@@ -133,21 +133,21 @@ func match(firstShape: HandShape, secondShape: HandShape) -> MatchResult {
     switch firstShape {
     case .rock:
         switch secondShape {
-        case .rock: return .draw
-        case .paper: return .lose
-        case .scissors: return .win
+            case .rock: return .draw
+            case .paper: return .lose
+            case .scissors: return .win
         }
     case .paper:
         switch secondShape {
-        case .rock: return .win
-        case .paper: return .draw
-        case .scissors: return .lose
+            case .rock: return .win
+            case .paper: return .draw
+            case .scissors: return .lose
         }
     case .scissors:
         switch secondShape {
-        case .rock: return .lose
-        case .paper: return .win
-        case .scissors: return .draw
+            case .rock: return .lose
+            case .paper: return .win
+            case .scissors: return .draw
         }
     }
 }
@@ -174,11 +174,42 @@ var moneyArray:[(Int,CoinType)] = [(10,.penny),
                                    (7,.quarter)]
 
 // your code here
+
+var total = 0
+for n in moneyArray{
+    total += n.0 * n.1.rawValue
+}
+print(total)
 ```
 
+
+
 b) Write a method in the `CoinType` enum that returns an Int representing how many coins of that type you need to have a dollar. Then, create an instance of `CoinType` set to `.nickle` and use your method to print out how many nickels you need to have to make a dollar.
+```swift
 
+enum CoinType: Int {
+    case penny = 1
+    case nickle = 5
+    case dime = 10
+    case quarter = 25
 
+    func howManyToDollar() -> Int {
+        switch self {
+        case .penny:
+            return 100
+        case .nickle:
+            return 20
+        case .dime:
+            return 10
+        case .quarter:
+            return 4
+        }
+    }
+}
+
+let myCoins = CoinType.nickle
+print(myCoins.howManyToDollar())
+```
 ## Question 7
 
 a) Write an enum called `DayOfWeek` to represent the days of the week with a raw value of type String.
