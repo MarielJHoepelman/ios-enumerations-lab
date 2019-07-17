@@ -75,7 +75,33 @@ myFavoritePolygon
 ```
 
 c) Re-write `Shape` so that each case has an associated value of type Int that will represent the length of the sides (assume the shapes are regular polygons so all the sides are the same length) and write a method inside that returns the perimeter of the shape.
+```swift
+enum Shapes {
+    case triangle(Int)
+    case rectangle(Int)
+    case square(Int)
+    case pentagon(Int)
+    case hexagon(Int)
 
+func perimeterCalculator() -> Int {
+    switch self {
+        case .triangle(let length):
+            return length * 3
+        case .rectangle(let length):
+            return length * 4
+        case .pentagon(let length):
+            return length * 5
+        case .square(let length):
+            return length * 4
+        case .hexagon(let length):
+            return length * 6
+        }
+    }
+}
+
+let fav = Shapes.triangle(2)
+print(fav.perimeterCalculator())
+```
 
 ## Question 3
 
