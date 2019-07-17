@@ -107,6 +107,10 @@ print(fav.perimeterCalculator())
 
 Write an enum called `OperatingSystem` and give it cases for `windows`, `mac`, and `linux`. Create an array of 10 `OperatingSystem` objects where each one is set to a random operating system. Then, iterate through the array and print out a message depending on the operating system.
 
+```swift
+I don't understand this instruction. 
+```
+
 
 ## Question 4
 
