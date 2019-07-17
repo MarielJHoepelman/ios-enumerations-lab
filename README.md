@@ -117,6 +117,42 @@ c) Write a function called `match` that takes two `HandShapes` and returns a `Ma
 
 Hint: Rock beats scissors, paper beats rock, scissor beats paper
 
+```swift
+enum HandShape {
+    case rock
+    case paper
+    case scissors
+}
+enum MatchResult {
+    case win
+    case draw
+    case lose
+}
+
+func match(firstShape: HandShape, secondShape: HandShape) -> MatchResult {
+    switch firstShape {
+    case .rock:
+        switch secondShape {
+        case .rock: return .draw
+        case .paper: return .lose
+        case .scissors: return .win
+        }
+    case .paper:
+        switch secondShape {
+        case .rock: return .win
+        case .paper: return .draw
+        case .scissors: return .lose
+        }
+    case .scissors:
+        switch secondShape {
+        case .rock: return .lose
+        case .paper: return .win
+        case .scissors: return .draw
+        }
+    }
+}
+print(match(firstShape: HandShape.paper, secondShape: HandShape.rock))
+```
 
 ## Question 6
 
