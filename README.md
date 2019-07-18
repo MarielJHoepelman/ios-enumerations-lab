@@ -292,3 +292,25 @@ c) Write code that prints the train letter or number of your instance of `MetroL
 a) Think of your own example of something that can be modeled as an enum and write it. Remember that enums allow you to create instances of a defined list of cases.
 
 b) Add a method to your enum.... try to have the method make sense.
+
+```swift
+enum AmITired {
+    case day
+    case evening
+    case night
+
+func checkTiredLevel() -> String {
+    switch self {
+        case .day:
+            return "not that tired but getting there"
+        case .evening:
+            return "Tired level moderate"
+        case .night:
+            return "Im out"
+        }
+    }
+}
+let currentStatus = AmITired.night
+print(currentStatus.checkTiredLevel())
+//prints 'Im out'
+```
