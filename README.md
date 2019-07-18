@@ -281,10 +281,47 @@ c) Write a method in `DayOfWeek` called `isWeekend` that determines whether a da
 ## Question 8
 
 a) Create an enum called `MetroLine` with cases for the colors of the metro train lines. Create an instance of `MetroLine`.
-
+```swift
+enum MetroLine {
+    case green
+    case red
+    case yellow
+    case blue
+}
+let trainA = MetroLine.blue
+print(trainA)
+```
 b) Modify your enum so that each case has an associated value of either Character or Int that will represent the train on that line. Create a new instance of `MetroLine` and give it an appropriate train letter or number.
+```swift
+enum MetroLine {
+    case green(Int)
+    case red(Int)
+    case blue(Character)
+}
+let train4 = MetroLine.green(4)
+let trainE = MetroLine.blue("E")
+print(trainE)
+```
 
 c) Write code that prints the train letter or number of your instance of `MetroLine`.
+```swift
+enum MetroLine {
+    case red(Int)
+    case blue(Character)
+
+    func line()->Void {
+        switch self {
+        case .red(let line):
+            print("Train \(line)")  
+        case .blue(let line):
+        print("Train \(line)")
+        }
+    }
+}
+
+let trainLine = MetroLine.blue("E")
+trainLine.line()
+```
 
 
 ## Question 9
