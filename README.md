@@ -29,12 +29,12 @@ enum IOSDeviceType {
 var myDevice = IOSDeviceType.iPhone("6 plus")
 
 switch myDevice {
-    case .iPhone(let model):
-        print("iPhone \(model)")
-    case .iPad(let model):
-        print("iPad \(model)")
-    case .iWatch(let model ):
-        print("iWatch \(model)")
+case .iPhone(let model):
+    print("iPhone \(model)")
+case .iPad(let model):
+    print("iPad \(model)")
+case .iWatch(let model ):
+    print("iWatch \(model)")
 }
 myDevice
 //prints iPhone 6 plus
@@ -60,16 +60,16 @@ enum Shapes {
 var myFavoritePolygon = Shapes.hexagon(6)
 
 switch myFavoritePolygon {
-    case .triangle(let sides):
-        print("A triangle has \(sides) sides.")
-    case .rectangle(let sides):
-        print("A rectangle has \(sides) sides.")
-    case .pentagon(let sides):
-        print("A pentagon \(sides) sides.")
-    case .square(let sides):
-        print("A square \(sides) sides.")
-    case .hexagon(let sides):
-        print("A hexagon has \(sides) sides.")
+case .triangle(let sides):
+    print("A triangle has \(sides) sides.")
+case .rectangle(let sides):
+    print("A rectangle has \(sides) sides.")
+case .pentagon(let sides):
+    print("A pentagon \(sides) sides.")
+case .square(let sides):
+    print("A square \(sides) sides.")
+case .hexagon(let sides):
+    print("A hexagon has \(sides) sides.")
 }
 myFavoritePolygon
 ```
@@ -83,8 +83,8 @@ enum Shapes {
     case pentagon(Int)
     case hexagon(Int)
 
-func perimeterCalculator() -> Int {
-    switch self {
+    func perimeterCalculator() -> Int {
+        switch self {
         case .triangle(let length):
             return length * 3
         case .rectangle(let length):
@@ -147,7 +147,7 @@ var steps: [Direction] = [.up, .up, .left, .down, .left]
 for direction in steps {
 //    print("The current location is at x: \(location.x) and y: \(location.y)")
 //    print("I am about to go \(direction)")
-switch direction {
+    switch direction {
     case .up:
         location.y += 1
     case .down:
@@ -190,21 +190,21 @@ func match(firstShape: HandShape, secondShape: HandShape) -> MatchResult {
     switch firstShape {
     case .rock:
         switch secondShape {
-            case .rock: return .draw
-            case .paper: return .lose
-            case .scissors: return .win
+        case .rock: return .draw
+        case .paper: return .lose
+        case .scissors: return .win
         }
     case .paper:
         switch secondShape {
-            case .rock: return .win
-            case .paper: return .draw
-            case .scissors: return .lose
+        case .rock: return .win
+        case .paper: return .draw
+        case .scissors: return .lose
         }
     case .scissors:
         switch secondShape {
-            case .rock: return .lose
-            case .paper: return .win
-            case .scissors: return .draw
+        case .rock: return .lose
+        case .paper: return .win
+        case .scissors: return .draw
         }
     }
 }
@@ -299,8 +299,8 @@ enum AmITired {
     case evening
     case night
 
-func checkTiredLevel() -> String {
-    switch self {
+    func checkTiredLevel() -> String {
+        switch self {
         case .day:
             return "not that tired but getting there"
         case .evening:
